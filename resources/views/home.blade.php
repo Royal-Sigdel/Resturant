@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <menu-container>Hello from vue</menu-container>
                 </div>
             </div>
         </div>
