@@ -8,7 +8,6 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use \Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -68,25 +67,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],
-
+            'password' => Hash::make($data['password']),
         ]);
-
-        /*
-        if(request()->hasFile('avatar'))
-        {
-           $filename = request()->avatar->getClientOriginalName();
-           $this->deleteoldimage();
-           request()->avatar->storeAs('image',$filename,'public');
-           auth()->user->update(['avatar'=>$filename]);
-        }
     }
-    protected function deleteoldimage()
-    {
-        if(auth()->user()->avatar){
-            Storage::delete('/public/image' .auth()->user()->avatar);
-        }
-    }
-    */
-}
 }

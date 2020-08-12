@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <menu-container>Hello from vue</menu-container>
+                    <example-component></example-component>
                 </div>
             </div>
         </div>

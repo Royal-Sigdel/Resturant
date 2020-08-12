@@ -23,4 +23,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', 'UserController@profile');
 Route::post('/profile', 'UserController@update_avatar');
-
