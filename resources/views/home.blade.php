@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <example-component></example-component>
+                    <div id = "app1">
+                    <menu-component :items="{{json_encode($categories)}}"></menu-component>
+                    </div>
                 </div>
             </div>
         </div>

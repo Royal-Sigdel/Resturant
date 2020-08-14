@@ -22,5 +22,9 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "global": "^4.4.0",
+        "gulp": "^4.0.2"
     }
 }

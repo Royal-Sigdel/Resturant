@@ -16,6 +16,11 @@ class UsersTableSeeder extends Seeder
             'name'=> 'Royal Sigdel',
             'email'=> 'rsigdel@gmail.com',
             'password'=>'password20',
+            'remember_token' => '',
         ]);
+        $user = factory(User::class)->make([
+            'email' => 'rsigdel@gmail.com',
+            'password' => 'password20'
+        ]);  
     }
 }

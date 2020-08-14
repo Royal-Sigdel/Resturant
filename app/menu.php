@@ -17,4 +17,13 @@ class menu extends Model
     protected $fillable = [
         'name', 'description', 'image','price',
     ];
+    protected $with = ['category'];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+}
+class MenuService
+{
+        
 }

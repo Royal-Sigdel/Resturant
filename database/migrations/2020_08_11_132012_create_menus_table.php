@@ -19,6 +19,9 @@ class CreateMenusTable extends Migration
             $table->float('price');
             $table->string('description');
             //$table->string('image');
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('resto_id');
+            //$table->string('category');
             $table->timestamps();
         });
     }
