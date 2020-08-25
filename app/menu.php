@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Category;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class menu extends Model
 {
@@ -18,12 +20,12 @@ class menu extends Model
         'name', 'description', 'image','price',
     ];
     protected $with = ['category'];
-    public function category()
-    {
+
+     //protected $guarded = [];
+
+     public function category()
+     {
         return $this->belongsTo(Category::class);
-    }
-}
-class MenuService
-{
-        
+     }
+
 }

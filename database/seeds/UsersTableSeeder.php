@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -15,12 +16,7 @@ class UsersTableSeeder extends Seeder
         User::Create([
             'name'=> 'Royal Sigdel',
             'email'=> 'rsigdel@gmail.com',
-            'password'=>'password20',
-            'remember_token' => '',
+            'password'=>Hash::make('password20'),
         ]);
-        $user = factory(User::class)->make([
-            'email' => 'rsigdel@gmail.com',
-            'password' => 'password20'
-        ]);  
     }
 }

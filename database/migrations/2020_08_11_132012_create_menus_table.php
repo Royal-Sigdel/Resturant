@@ -15,13 +15,11 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
+            $table->integer('resto_id');
             $table->string('name');
             $table->float('price');
             $table->string('description');
-            //$table->string('image');
-            $table->unsignedInteger('category_id');
-            $table->unsignedInteger('resto_id');
-            //$table->string('category');
+            $table->Integer('category_id');
             $table->timestamps();
         });
     }
@@ -35,4 +33,7 @@ class CreateMenusTable extends Migration
     {
         Schema::dropIfExists('menus');
     }
-}
+    
+
+
+    }

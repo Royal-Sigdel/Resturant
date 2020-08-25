@@ -2,23 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <div id = "app1">
-                    <menu-component :items="{{json_encode($categories)}}"></menu-component>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="app1">
+        <menu-container 
+        :items="{{ json_encode($menus) }}"
+        :resto-id={{$restoId}}>
+        </menu-container>
     </div>
 </div>
 @endsection

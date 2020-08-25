@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use App\user;
+use App\Category;
 
 class Usercontroller extends Controller
  
-{ public function profile()
+{ 
+    public function profile()
     {
         return view('profile');
     }
