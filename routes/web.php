@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataReader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'UserController@profile');
+    Route::post('/profile', 'UserController@update_avatar');
+    Route::get('/restos','RestaurantController@index')->name('restos');
+    Route::get('/restos/menu/{no}','MenuController@index')->name('restos.menu');
+    Route::get('/table/orders/{no}','RestaurantOrderController@index')->name('restos.order');
+    Route::get('/table/orders/{no}/add','RestaurantOrderController@add')->name('restos.order.add');
+    Route::get('/requestqr','QRController@getblade')->name('qrcode');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'UserController@profile');
-Route::post('/profile', 'UserController@update_avatar');

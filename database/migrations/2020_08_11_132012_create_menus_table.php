@@ -13,12 +13,13 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
-            $table->id();
-            $table->integer('resto_id');
-            $table->string('name');
-            $table->float('price');
+        Schema::create('products', function (Blueprint $table) {
+            $table->increments('sgroup');
+            $table->string('sprod_code');
+            $table->integer('resto_id')->default(1);
+            $table->float('nMRP_Rate');
             $table->string('description');
+            $table->Integer('Quantity')->default(1);
             $table->Integer('category_id');
             $table->timestamps();
         });

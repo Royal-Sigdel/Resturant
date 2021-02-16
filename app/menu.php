@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Category;
+use App\Product_Group;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
@@ -16,16 +16,17 @@ class menu extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'description', 'image','price',
+    /*protected $fillable = [
+        'name', 'description', 'image','price','resto_Id'
     ];
+    */
     protected $with = ['category'];
 
-     //protected $guarded = [];
+    protected $guarded = [];
 
      public function category()
      {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Product_Group::class);
      }
 
 }

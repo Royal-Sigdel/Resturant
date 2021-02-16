@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" style="height:200px;">
     <div class="card-header">
       <slot name="title"></slot>
     </div>

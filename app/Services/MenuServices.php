@@ -2,15 +2,15 @@
 
 namespace App\Services;
 
-use App\menu;
+use App\Product;
 
 class MenuServices
 {
     public static function getMenuwithCategory($restoId)
         {
-            $menuItems = Menu::where('resto_id',$restoId)
+            $menuItems = Product::where('resto_id',$restoId)
         ->get()
-        ->groupBy('Category.name');
+        ->groupBy('Product_Group.sgroup_code');
 
         return $menuItems;
         }

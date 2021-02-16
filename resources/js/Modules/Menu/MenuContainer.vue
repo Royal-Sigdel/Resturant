@@ -2,7 +2,7 @@
   <div class="wrapper menu__container">
     <div class="row">
       <div class="col-md-8">
-        <card-component>
+        <card-compo>
           <template slot="title">My Menu</template>
           <template slot="main">
             <div class="section mb-3">
@@ -17,10 +17,10 @@
               <menu-group :items="currentMenuItems"></menu-group>
             </div>
           </template>
-        </card-component>
+        </card-compo>
       </div>
       <div class="col-md-4">
-        <card-component>
+        <card-compo>
           <template slot="title">Add Menu Item</template>
           <template slot="main">
             <menu-add-form
@@ -29,7 +29,7 @@
               v-on:newItemAdded="addNewItem"
             ></menu-add-form>
           </template>
-        </card-component>
+        </card-compo>
       </div>
     </div>
   </div>
